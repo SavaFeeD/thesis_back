@@ -4,6 +4,8 @@ pydantic
 starlette
 alembic
 psycopg2
-sqlalchemy~=1.4.7
+sqlalchemy
 python-dotenv
 SQLAlchemy-serializer
+pandas
+numpy
