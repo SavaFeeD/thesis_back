@@ -29,7 +29,7 @@ app.include_router(tasks.router)
 async def index():
     return response(
         result={
-            'msg': 'Hi! this is To-do app'
+            'msg': 'Hi! this is app'
         },
         status=status.HTTP_200_OK
     )
