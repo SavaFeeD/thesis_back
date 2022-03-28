@@ -19,7 +19,7 @@ load_dotenv()
 
 app = FastAPI()
 
-app.mount('/static', StaticFiles(directory='./app/static'), name='static')
+# app.mount('/static', StaticFiles(directory='./app/static'), name='static')
 
 app.include_router(dashboards.router)
 app.include_router(tasks.router)

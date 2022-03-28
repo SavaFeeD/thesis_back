@@ -1,21 +1,21 @@
 version: "3.9"
 
 services:
-    postgres:
-        image: postgres:13.3
+    db:
+        image: bitnami/postgresql
+        ports:
+            - "${DB_PORT}:5432"
         environment:
-            POSTGRES_DB: "todoapi"
-            POSTGRES_USER: "todouser"
-            POSTGRES_PASSWORD: "s1a2v3a4"
-        ports:
-            - "5432:5432"
+            - POSTGRES_USER=${DB_USERNAME}
+            - POSTGRES_PASSWORD=${DB_PASSWORD}
+            - POSTGRES_DB=${DB_DATABASE}
 
-    server:
-        build: .
-        command: uvicorn app.main:app --host 0.0.0.0
-        volumes:
-            - .:/app
-        ports:
-            - 8008:8000
-        depends_on:
-            - postgres
+#    server:
+#        build: .
+#        command: uvicorn app.main:app --host 0.0.0.0
+#        volumes:
+#            - .:/app
+#        ports:
+#            - 8008:8000
+#        depends_on:
+#            - postgres

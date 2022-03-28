@@ -3,9 +3,10 @@ uvicorn
 pydantic
 starlette
 alembic
-psycopg2
 sqlalchemy
 python-dotenv
 SQLAlchemy-serializer
 pandas
 numpy
+# psycopg2
+psycopg2-binary
